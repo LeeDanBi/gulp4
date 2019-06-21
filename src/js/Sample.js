@@ -8,4 +8,4 @@ class Sample {
     }
 }
 
-export default Sample;
+//export default Sample;

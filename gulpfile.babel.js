@@ -11,6 +11,9 @@ import nodemon from 'gulp-nodemon';
 import webpack from 'gulp-webpack';
 import webpackConfig from './webpack.config.js';
 import browserSync from 'browser-sync';
+import Cache from 'gulp-file-cache';
+
+let cache = new Cache();
 
 let hello = (done) => {
     console.log('hello');
@@ -28,19 +31,19 @@ const DIR = {
 };
 
 const SRC = {
-    JS : DIR.SRC + '/js/*.js',
-    CSS : DIR.SRC + '/css/*.css',
-    HTML : DIR.SRC + '/*.html',
-    IMAGES : DIR.SRC + '/images/*',
-    SERVER : 'server/**/*.js',
+    JS: DIR.SRC + '/js/*.js',
+    CSS: DIR.SRC + '/css/*.css',
+    HTML: DIR.SRC + '/*.html',
+    IMAGES: DIR.SRC + '/images/*',
+    SERVER: 'server/**/*.js'
 };
 
 const DEST = {
-    JS : DIR.DEST + '/js',
-    CSS : DIR.DEST + '/css',
-    HTML : `${DIR.DEST}/`,
-    IMAGES : `${DIR.DEST}/images`,
-    SERVER : 'app'
+    JS: DIR.DEST + '/js',
+    CSS: DIR.DEST + '/css',
+    HTML: DIR.DEST + '/',
+    IMAGES: DIR.DEST + '/images',
+    SERVER: 'app'
 };
 
 let clean = (done) => {
