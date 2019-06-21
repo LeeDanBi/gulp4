@@ -1,7 +1,4 @@
-let apple = 'apple';
-let SayHello = () => {
-    console.log(`hey, ${apple}`);
-}
+import Sample from './Sample';
 
-SayHello();
-console.log('why');
+let sample = new Sample("velopert");
+sample.say();
